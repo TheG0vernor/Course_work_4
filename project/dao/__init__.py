@@ -1,5 +1,4 @@
-from .director import DirectorDAO
-from .main import GenresDAO
+
 
 __all__ = [
     'GenresDAO',
@@ -7,4 +6,6 @@ __all__ = [
     'DirectorDAO'
 ]
 
+from .director import DirectorDAO
+from .main import GenresDAO
 from .movie import MovieDAO

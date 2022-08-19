@@ -1,6 +1,6 @@
 from sqlalchemy import desc
 
-from project.dao.model.movie import Movie
+from project.models import Movie
 
 
 class MovieDAO:
