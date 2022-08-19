@@ -39,10 +39,13 @@ class DevelopmentConfig(BaseConfig):
 class ProductionConfig(BaseConfig):
     DEBUG = False
     # TODO: дополнить конфиг
+    SQLALCHEMY_DATABASE_URI = "sqlite:///project.db"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class ConfigFactory:
-    flask_env = os.getenv('FLASK_ENV')
+    # flask_env = os.getenv('FLASK_ENV')
+    flask_env = 'development'
 
     @classmethod
     def get_config(cls) -> Type[BaseConfig]:

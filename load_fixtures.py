@@ -4,6 +4,8 @@ from typing import Any, Dict, List, Type
 from sqlalchemy.exc import IntegrityError
 
 from project.config import config
+from project.dao.model.director import Director
+from project.dao.model.movie import Movie
 from project.models import Genre
 from project.server import create_app
 from project.setup.db import db, models
@@ -24,6 +26,8 @@ if __name__ == '__main__':
     with app.app_context():
         # TODO: [fixtures] Добавить модели Directors и Movies
         load_data(fixtures['genres'], Genre)
+        load_data(fixtures['director'], Director)
+        load_data(fixtures['movie'], Movie)
 
         with suppress(IntegrityError):
             db.session.commit()
