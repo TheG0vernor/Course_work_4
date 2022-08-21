@@ -3,10 +3,10 @@ from flask_restx import Namespace, Resource
 from project.container import director_service
 from project.dao.model.director import DirectorSchema
 
-director_ns = Namespace('directors')
+api = Namespace('directors')
 
 
-@director_ns.route('/')
+@api.route('/')
 class DirectorsView(Resource):
 
     def get(self):
@@ -15,7 +15,7 @@ class DirectorsView(Resource):
         return res, 200
 
 
-@director_ns.route('/<int:did>')
+@api.route('/<int:did>')
 class DirectorView(Resource):
 
     def get(self, did):

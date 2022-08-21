@@ -3,12 +3,11 @@ from flask_restx import Resource, Namespace
 
 from project.container import movie_service
 from project.dao.model.movie import MovieSchema
-from project.services import movies_service
 
-movie_ns = Namespace('movies')
+api = Namespace('movies')
 
 
-@movie_ns.route('/')
+@api.route('/')
 class MoviesView(Resource):
 
 
@@ -24,7 +23,7 @@ class MoviesView(Resource):
         return res, 200
 
 
-@movie_ns.route('/<int:bid>')
+@api.route('/<int:bid>')
 class MovieView(Resource):
 
     def get(self, bid):

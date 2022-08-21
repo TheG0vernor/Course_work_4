@@ -1,8 +1,13 @@
-from .auth import auth_ns, user_ns
-from .main import genres_ns
+from .main.movies import api as movie_ns
+from .main.genres import api as genres_ns
+from .main.directors import api as director_ns
+from .auth.auth import api as auth_ns
+from .auth.user import api as user_ns
 
 __all__ = [
-    'auth_ns',
     'genres_ns',
-    'user_ns',
+    'director_ns',
+    'movie_ns',
+    'auth_ns',
+    'user_ns'
 ]
