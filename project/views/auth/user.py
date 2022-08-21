@@ -8,7 +8,7 @@ api = Namespace('user')
 
 
 @api.route('/')
-class UserView(Resource):
+class UserView(Resource):  # просмотр профиля пользователя
     def get(self):
         rs = user_service.get_user(request.headers)
         res = UserSchema().dump(rs)
@@ -20,7 +20,7 @@ class UserView(Resource):
 
 
 @api.route('/password/')
-class UserPassView(Resource):
+class UserPassView(Resource):  # обновление пароля
     def put(self):
         user_service.put_password(request.headers, request.json)
-        return 'Password successfully update', 204
+        return '', 204
